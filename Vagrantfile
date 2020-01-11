@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.define "TICK" do |node|
-      node.vm.box = "/Users/kekuhls/projects/vagrant/ubuntu16.0.4/package.box"
+      node.vm.box = "kuhlskev/Telemetry_Collection_Stack"
 
       node.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh', auto_correct: true
       # Forward API Ports
@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
   # config.vm.box_check_update = false
-  config.ssh.private_key_path = "private_key"  
+  # config.ssh.private_key_path = "private_key"  
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
